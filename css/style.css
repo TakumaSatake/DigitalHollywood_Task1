@@ -1,0 +1,319 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html{
+    /* 16px*62.5% = 10px */
+    font-size: 62.5%;
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: #595757;
+    font-family: 'Robot','sans-serif';
+    font-size: 1.6rem;
+    font-feature-settings: "palt";
+    letter-spacing: 0.1em;
+    -webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+a{
+    color: #595757;
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+/*----------------------------
+ * utility
+----------------------------*/
+.text-center{
+	text-align: center;
+}
+
+/*----------------------------
+ *header
+ ---------------------------*/
+.header{
+    background-image: url(../images/slide/slide_1_sp.png);
+	background-size: cover;
+    height: 100vw;
+}
+.header-inner{
+    position: relative;
+    padding: 15px;
+    
+}
+/*個人用メモ*/
+/*なぜ display: flex;を使わないか
+ * → PC表示でハンバーガーメニューを非表示にするとレイアウトが崩れるから
+ *position: absolute;でも位置の指定は可能
+ */
+.logo{
+    max-width: 72px;
+	margin: 0 auto;
+	line-height: 1;
+}
+.btn-trigger{
+	position: absolute;
+	top: 10px;
+    margin-top: 4.5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+	background-color: #8fafc3;
+    overflow:hidden;
+}
+.language{
+	position: absolute;
+	top: 10px;
+    margin-top: 4.5px;
+	right: 15px;
+    font-size: 1rem;
+	text-transform: uppercase;
+}
+.select-language{
+    color: #8fafc3;
+}
+.catch-copy{
+	display: none;
+}
+
+/*----------------------------
+ *menu
+ ---------------------------*/
+/*search area*/
+.search-area{
+	display: flex;
+	justify-content: space-between;
+    margin-bottom: 56px;
+    border-bottom: solid 2px #b7b3b3;
+}
+.search-area_parts{
+	margin: 0;
+	font-size: 1.4rem;
+    text-transform: uppercase;
+}
+.search-area_button{
+	color: #b7b3b3;
+}
+
+/*navigation area*/
+.navigation{
+    position: absolute;
+    width: 265px;
+    top: 0;
+    left: -100%;
+    padding: 35px;
+    background-color: rgba(255,255,255,0.95);
+}
+.nav-item{
+    margin-bottom: 24px;
+	text-transform: uppercase;
+	font-size: 1rem;
+}
+.nav-item.specific{
+	margin-bottom: 40px;
+}
+.nav-item.specific>a{
+	color: #8FAFC3;
+}
+.nav-list>li:last-child{
+    margin-bottom: 43px;
+}
+.nav-line{
+    margin: 0 0 45px;
+	width: 54px;
+	height: 2px;
+}
+.nav-title{
+	margin: 0 0 40px;
+	color: #8FAFC3;
+	text-transform: uppercase;
+	font-family: "playfair Display","serif";
+	font-style: italic;
+}
+.nav-sns>li:last-child{
+    margin-bottom: 0;
+}
+
+/*close button*/
+.btn-close{
+    position: absolute;
+	top: 16px;
+	right: -48px;
+    background-color: #8fafc3;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    overflow:hidden;
+}
+.btn-close use:nth-of-type(1) {
+    -webkit-transform: translateY(30px) rotate(-45deg);
+    transform: translateY(30px) rotate(-45deg);
+}
+.btn-close use:nth-of-type(2) {
+    -webkit-transform: translateX(35px) translateY(-15px) rotate(45deg);
+    transform: translateX(35px) translateY(-15px) rotate(45deg);
+}
+
+/*----------------------------
+ *contentes
+ ---------------------------*/
+.inner{
+    box-sizing: border-box;
+    padding: 40px 15px 44px;
+}
+.production-list{
+    -webkit-display: flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -15px;
+}
+.production-item{
+    box-sizing: border-box;
+    width: 50%;
+    padding-left: 15px;
+    margin-bottom: 24px;
+}
+.production-image{
+    margin-bottom: 12px;
+}
+.production-text{
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+.production-text:last-of-type{
+    margin-bottom: 0;
+}
+/*----------------------------
+ *footer
+ ---------------------------*/
+.footer{
+	padding: 10px 0;
+}
+
+@media screen and (min-width:768px){
+	.inner{
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 56px 0 152px;
+	}
+	/*----------------------------
+	 *header
+	 ---------------------------*/
+	.header{
+		height: auto;
+		background-image: url(../images/slide/slide_1_pc.png);
+		background-position: center;
+	}
+    .header-inner{
+        position: relative;
+		max-width: 960px;
+		margin: 0 auto;
+    }
+	.logo{
+		position: absolute;
+		right: 0;
+		left: 0;
+		margin: auto;
+	}
+	.catch-copy{
+		display: block;
+        position: absolute;
+        margin: 0;
+        top: 300px;
+        right: 10px;
+        color: #8fafc3;
+        font-size: 3.2rem;
+        font-family: "playfair Display","serif";
+        font-style: italic;
+        line-height: 1.1;
+	}
+    /* navigation エリア */
+	.navigation{
+		position: relative;
+        width: 150px;
+		top: 0;
+		left: 0;
+        padding: 0;
+		background-color: rgba(255,255,255,0);
+	}
+    .search-area{
+        line-height: 1.75;
+        cursor: pointer;
+        cursor: hand;
+    }
+	.search-area_parts{
+		font-size: 1rem;
+	}
+	.search-area_button{
+		cursor: pointer;
+        cursor: hand;
+	}
+    .nav-item.specific{
+        margin: 30px 0;
+    }
+    .nav-item{
+        margin-bottom: 18px;
+    }
+    .nav-list>li:last-child{
+        margin-bottom: 40px;
+    }
+	.nav-line{
+		margin-bottom: 40px;
+	}
+	.nav-title{
+		margin-bottom: 30px;
+	}
+	.btn-trigger{
+		display: none;
+	}
+	.btn-close{
+		display: none;
+	}
+	/*----------------------------
+	 *contentes
+	 ---------------------------*/
+	.production-list{
+		padding-left: 25%;
+        margin-left: -25px;
+	}
+	.production-item{
+		width: 33.333%;
+		padding-left: 25px;
+	}
+	.production-image{
+		margin-bottom: 20px;
+		-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+		-ms-transition:all 0.3s ease-in-out;
+		transition:all 0.3s ease-in-out;
+	}
+	.production-item:hover .production-image{
+		transform: scale(1.08);	
+	}
+	/*----------------------------
+	 *footer
+	 ---------------------------*/
+	.footer{
+		padding-bottom: 12px;
+		text-align: right;
+	}
+	.footer .inner{
+		padding: 0;
+	}
+}
